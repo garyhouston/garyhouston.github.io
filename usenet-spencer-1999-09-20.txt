@@ -1,0 +1,39 @@
+From: h...@spsystems.net (Henry Spencer)
+Subject: Re: Standalone Tcl regexp library to link with C/C++ ?
+Date: 1999/09/20
+Message-ID: <FICB32.120@spsystems.net>#1/1
+X-Deja-AN: 527319721
+References: <37D7B4AA.A3249E88@dal.asp.ti.com> <37D7CD06.B745EC81@ciril.fr>
+Organization: SP Systems, Toronto, Canada
+Newsgroups: comp.lang.tcl
+
+In article <37D7CD06.B745E...@ciril.fr>,
+Frederic BONNET  <frederic.bon...@ciril.fr> wrote:
+>> Does a standalone version of the Tcl regexp functions exist which can
+>> easily be linked with C/C++ ?
+>
+>Tcl uses Henry Spencer's regexp engine, which is also available as standalone.
+
+Alas, this isn't *quite* the right answer in this case.  The new Tcl
+regexp engine is indeed my work, but it doesn't yet exist as a standalone
+*distribution*.  That will be fixed, literally, any day now -- I've been
+working on it, intermittently, for some time. 
+
+(You might wonder why it currently exists only as part of Tcl.  The answer
+is that Scriptics was willing to support its development, so making it work
+inside Tcl was first priority.)
+
+One small complication which will intervene is that the Unicode interface
+(in generic/regc_locale.c) is *not* my work -- the folks at Scriptics did
+that -- so, at least for now, the standalone distribution will be set up
+to talk to such an interface but won't have one included.  I realize that
+this should be cured, but it's a significant amount of work and I haven't
+found time for it yet.
+
+>...I believe it is C++ safe BTW, considering the #ifdef __cplusplus in the
+>headers.
+
+It's intended to be C++ safe, but I haven't personally tested that.
+-- 
+The space program reminds me        |  Henry Spencer   h...@spsystems.net
+of a government agency.  -Jim Baen  |      (aka h...@zoo.toronto.edu)

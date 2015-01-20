@@ -1,0 +1,44 @@
+Newsgroups: comp.compilers
+Path: gmd.de!xlink.net!sol.ctr.columbia.edu!math.ohio-state.edu!cs.utexas.edu!swrinde!elroy.jpl.nasa.gov!ames!olivea!hal.com!decwrl!world!iecc!compilers-sender
+From: h...@zoo.toronto.edu (Henry Spencer)
+Subject: Re: Regular expression implementations ?
+Message-ID: <93-08-038@comp.compilers>
+Keywords: lex, DFA
+Sender: compilers-sen...@chico.iecc.com
+Organization: U of Toronto Zoology
+References: <93-08-031@comp.compilers> <93-08-035@comp.compilers>
+Date: Sat, 7 Aug 1993 23:14:02 GMT
+Approved: compil...@chico.iecc.com
+Lines: 31
+
+arn...@cc.gatech.edu (Arnold Robbins) writes:
+>>Where can I find information on regular expressions implementations in C?
+>
+>Two and a half choices.
+>1) Flex, which is a lex clone...
+>2) Gnu regex, prep.ai.mit.edu:/pub/gnu/regex-0.12.tar.gz (slow)
+>3) Gnu RX, a regex re-implementation...
+>[There's more regexps than that.  What about Henry Spencer's package? -John]
+
+In fact, there are at least two more, because I wrote them both. :-)
+
+There's my old package, dating back to 1986 or thereabouts, which is in
+widespread use (including several commercial products -- it helps that
+its copyright terms are much more liberal than the GNU ones).  A slightly
+updated version of that will appear in a few months, in conjunction with
+a new book -- Software Solutions In C, ed. Dale Schumacher, Academic
+Press -- which will have a chapter (by me) that walks through the code
+explaining how it works.  Meanwhile, you can find the old code lots of
+places, including zoo.toronto.edu/dtr/regexp.shar .
+
+Then there's my new one, which is the regular-expression implementation
+shipping with 4.4BSD.  The good news is that it's completely POSIX.2
+compliant.  The bad news is that it's pretty slow; it's basically an
+alpha release, and I'd really hoped to get at least to a beta before
+4.4 shipped, but that didn't happen.  Eventually there will be a faster
+release, but don't ask me to set a date just yet.
+--
+Henry Spencer @ U of Toronto Zoology,  h...@zoo.toronto.edu  utzoo!henry
+-- 
+Send compilers articles to compil...@iecc.com or
+{ima | spdcc | world}!iecc!compilers. Meta-mail to compilers-requ...@iecc.com.
